@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+creditcard.csv
+archive.zip
+.DS_Store

@@ -1,0 +1,119 @@
+{
+  "validation": {
+    "roc_auc": 0.9733178958233664,
+    "n_candidates": 55993,
+    "t_star": 0.031193923205137253,
+    "rules": {
+      "default_0_5": {
+        "threshold": 0.5,
+        "TP": 71,
+        "FP": 9,
+        "FN": 27,
+        "TN": 56854,
+        "C": 279
+      },
+      "min_cost_t_star": {
+        "threshold": 0.031193923205137253,
+        "TP": 82,
+        "FP": 34,
+        "FN": 16,
+        "TN": 56829,
+        "C": 194
+      },
+      "all_negative_inf": {
+        "threshold": "inf",
+        "TP": 0,
+        "FP": 0,
+        "FN": 98,
+        "TN": 56863,
+        "C": 980
+      }
+    }
+  },
+  "checks": {
+    "A": {
+      "passed": true,
+      "best_threshold": 0.4,
+      "min_cost": 2,
+      "n_candidates": 6
+    },
+    "B": {
+      "passed": true,
+      "best_threshold": "inf",
+      "min_cost": 0,
+      "n_candidates": 4
+    },
+    "C": {
+      "passed": true,
+      "best_threshold": 0.8,
+      "min_cost": 10,
+      "n_candidates": 4
+    }
+  },
+  "test": {
+    "t_star": {
+      "threshold": 0.031193923205137253,
+      "TP": 80,
+      "FP": 43,
+      "FN": 19,
+      "TN": 56820,
+      "C": 233,
+      "precision": 0.6504065040650406,
+      "recall": 0.8080808080808081
+    },
+    "default_0_5_reference": {
+      "threshold": 0.5,
+      "TP": 71,
+      "FP": 8,
+      "FN": 28,
+      "TN": 56855,
+      "C": 288,
+      "precision": 0.8987341772151899,
+      "recall": 0.7171717171717171
+    },
+    "fp_top5_stats": {
+      "count": 5,
+      "amount_min": 2.0,
+      "amount_median": 89.99,
+      "amount_mean": 54.891999999999996,
+      "amount_max": 89.99,
+      "dist_min": 0.049766894429922104,
+      "dist_median": 0.8915681727230549,
+      "dist_mean": 0.588454183191061,
+      "dist_max": 0.9351330287754536
+    },
+    "fn_top5_stats": {
+      "count": 5,
+      "amount_min": 0.0,
+      "amount_median": 3.79,
+      "amount_mean": 80.19200000000001,
+      "amount_max": 290.18,
+      "dist_min": 0.012842385098338127,
+      "dist_median": 0.02482082974165678,
+      "dist_mean": 0.02272773248841986,
+      "dist_max": 0.0306934995460324
+    },
+    "fp_all_stats": {
+      "count": 43,
+      "amount_min": 0.0,
+      "amount_median": 2.49,
+      "amount_mean": 110.97930232558141,
+      "amount_max": 1000.0,
+      "dist_min": 0.00019182637333869934,
+      "dist_median": 0.024989984929561615,
+      "dist_mean": 0.2086161307470743,
+      "dist_max": 0.9351330287754536
+    },
+    "fn_all_stats": {
+      "count": 19,
+      "amount_min": 0.0,
+      "amount_median": 33.76,
+      "amount_mean": 161.98526315789474,
+      "amount_max": 829.41,
+      "dist_min": 0.009703170508146286,
+      "dist_median": 0.029118334408849478,
+      "dist_mean": 0.02582161884282342,
+      "dist_max": 0.031144809054239886
+    }
+  }
+}
