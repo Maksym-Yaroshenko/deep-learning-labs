@@ -1,0 +1,116 @@
+{
+  "split_csv_sha256": "b29c53c7e41b0c4bb36e54d8ca3a9bcbac11eca96abeab8ba4fbcf5937a160b8",
+  "effects": {
+    "F_scratch_1": 0.511114212680274,
+    "F_frozen_mean": 0.8837657141829945,
+    "R_frozen": 0.010095240174428088,
+    "F_unfreeze_mean": 0.8905018503572067,
+    "R_unfreeze": 0.016956076341578363,
+    "R": 0.016956076341578363,
+    "delta_pre": 0.37265150150272053,
+    "delta_pre_verdict": "ефект вартий перевірки, але не доведений (|Δ| > R)",
+    "delta_unf": 0.006736136174212204,
+    "delta_unf_verdict": "різниця не відрізняється від розкиду (|Δ| <= R)",
+    "total_transfer_gain": 0.37938763767693273
+  },
+  "selected": {
+    "regime": "unfreeze",
+    "seed": 1,
+    "val_macro_f1": 0.9001107619610756
+  },
+  "test": {
+    "device": "cpu",
+    "n_test": 1502,
+    "macro_f1": 0.8941085788898332,
+    "accuracy": 0.8921438082556591,
+    "accuracy_se": 0.008003961803908197,
+    "test_minus_val_macro_f1": -0.006002183071242451,
+    "confusion_matrix": [
+      [
+        187,
+        0,
+        3,
+        0,
+        1,
+        28
+      ],
+      [
+        0,
+        236,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        252,
+        18,
+        2,
+        2
+      ],
+      [
+        1,
+        0,
+        60,
+        194,
+        7,
+        1
+      ],
+      [
+        4,
+        1,
+        12,
+        4,
+        232,
+        2
+      ],
+      [
+        10,
+        1,
+        1,
+        0,
+        0,
+        239
+      ]
+    ],
+    "five_errors": [
+      {
+        "file": "20071.jpg",
+        "true_class": "mountain",
+        "pred_class": "glacier",
+        "pred_prob": 0.9487156271934509,
+        "pair_error_count": 60
+      },
+      {
+        "file": "20246.jpg",
+        "true_class": "buildings",
+        "pred_class": "street",
+        "pred_prob": 0.9996672868728638,
+        "pair_error_count": 28
+      },
+      {
+        "file": "20179.jpg",
+        "true_class": "glacier",
+        "pred_class": "mountain",
+        "pred_prob": 0.9573783874511719,
+        "pair_error_count": 18
+      },
+      {
+        "file": "20531.jpg",
+        "true_class": "sea",
+        "pred_class": "glacier",
+        "pred_prob": 0.9991255402565002,
+        "pair_error_count": 12
+      },
+      {
+        "file": "20953.jpg",
+        "true_class": "street",
+        "pred_class": "buildings",
+        "pred_prob": 0.5909830331802368,
+        "pair_error_count": 10
+      }
+    ]
+  }
+}

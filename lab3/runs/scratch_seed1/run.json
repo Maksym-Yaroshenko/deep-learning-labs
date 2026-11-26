@@ -1,0 +1,136 @@
+{
+  "regime": "scratch",
+  "seed": 1,
+  "git_commit": "4d2659a5f81cc592dab36c31e5bd58ce382b6b43",
+  "git_dirty": true,
+  "split_csv_sha256": "b29c53c7e41b0c4bb36e54d8ca3a9bcbac11eca96abeab8ba4fbcf5937a160b8",
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torchvision": "0.29.2",
+    "device": "mps",
+    "dtype": "float32"
+  },
+  "transforms": {
+    "train": {
+      "RandomResizedCrop": {
+        "size": 160,
+        "scale": [
+          0.7,
+          1.0
+        ],
+        "ratio": [
+          0.75,
+          1.3333333333333333
+        ]
+      },
+      "RandomHorizontalFlip": {
+        "p": 0.5
+      },
+      "Normalize": {
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      }
+    },
+    "validation_and_test": {
+      "Resize": {
+        "size": [
+          160,
+          160
+        ]
+      },
+      "Normalize": {
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      }
+    }
+  },
+  "model_and_regime": {
+    "architecture": "resnet18",
+    "weights": null,
+    "num_classes": 6,
+    "classes": [
+      "buildings",
+      "forest",
+      "glacier",
+      "mountain",
+      "sea",
+      "street"
+    ],
+    "total_params": 11179590,
+    "trainable_params": 11179590,
+    "eval_modules_during_train": [],
+    "bn_momentum": 0.1,
+    "bn_eps": 1e-05,
+    "optimizer": "AdamW",
+    "optimizer_groups": [
+      {
+        "modules": "all",
+        "lr": 0.003,
+        "weight_decay": 0.0001
+      }
+    ],
+    "adamw_betas": [
+      0.9,
+      0.999
+    ],
+    "adamw_eps": 1e-08,
+    "adamw_amsgrad": false
+  },
+  "training_protocol": {
+    "epochs": 8,
+    "batch_size_train": 32,
+    "batch_size_eval": 64,
+    "shuffle_train": true,
+    "drop_last": false,
+    "num_workers": 0,
+    "steps_per_epoch": 38,
+    "total_steps": 304,
+    "loss_fn": "CrossEntropyLoss(reduction='mean')",
+    "lr_scheduler": null,
+    "grad_clip": null,
+    "mixed_precision": false,
+    "label_smoothing": 0.0,
+    "class_weights": null,
+    "early_stopping": false
+  },
+  "train_loss_per_epoch": [
+    1.6203935305277506,
+    1.284219974676768,
+    1.1831854645411173,
+    1.1399158422152202,
+    1.0921578709284465,
+    1.0617965110143026,
+    1.0539548603693645,
+    0.9698949766159057
+  ],
+  "val_macro_f1_per_epoch": [
+    0.3406227731105424,
+    0.3984939456059735,
+    0.42250732092070975,
+    0.5617132902676527,
+    0.4742758708404011,
+    0.4069008511272764,
+    0.5352885602239061,
+    0.511114212680274
+  ],
+  "final_train_loss": 0.9698949766159057,
+  "final_val_macro_f1": 0.511114212680274,
+  "train_time_sec": 49.82
+}

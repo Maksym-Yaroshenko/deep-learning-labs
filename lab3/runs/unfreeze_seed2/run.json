@@ -1,0 +1,151 @@
+{
+  "regime": "unfreeze",
+  "seed": 2,
+  "git_commit": "4d2659a5f81cc592dab36c31e5bd58ce382b6b43",
+  "git_dirty": true,
+  "split_csv_sha256": "b29c53c7e41b0c4bb36e54d8ca3a9bcbac11eca96abeab8ba4fbcf5937a160b8",
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torchvision": "0.29.2",
+    "device": "mps",
+    "dtype": "float32"
+  },
+  "transforms": {
+    "train": {
+      "RandomResizedCrop": {
+        "size": 160,
+        "scale": [
+          0.7,
+          1.0
+        ],
+        "ratio": [
+          0.75,
+          1.3333333333333333
+        ]
+      },
+      "RandomHorizontalFlip": {
+        "p": 0.5
+      },
+      "Normalize": {
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      }
+    },
+    "validation_and_test": {
+      "Resize": {
+        "size": [
+          160,
+          160
+        ]
+      },
+      "Normalize": {
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      }
+    }
+  },
+  "model_and_regime": {
+    "architecture": "resnet18",
+    "weights": "ResNet18_Weights.IMAGENET1K_V1",
+    "num_classes": 6,
+    "classes": [
+      "buildings",
+      "forest",
+      "glacier",
+      "mountain",
+      "sea",
+      "street"
+    ],
+    "total_params": 11179590,
+    "trainable_params": 8396806,
+    "eval_modules_during_train": [
+      "conv1",
+      "bn1",
+      "layer1",
+      "layer2",
+      "layer3"
+    ],
+    "bn_momentum": 0.1,
+    "bn_eps": 1e-05,
+    "optimizer": "AdamW",
+    "optimizer_groups": [
+      {
+        "modules": [
+          "fc"
+        ],
+        "lr": 0.003,
+        "weight_decay": 0.0001
+      },
+      {
+        "modules": [
+          "layer4"
+        ],
+        "lr": 0.0003,
+        "weight_decay": 0.0001
+      }
+    ],
+    "adamw_betas": [
+      0.9,
+      0.999
+    ],
+    "adamw_eps": 1e-08,
+    "adamw_amsgrad": false
+  },
+  "training_protocol": {
+    "epochs": 8,
+    "batch_size_train": 32,
+    "batch_size_eval": 64,
+    "shuffle_train": true,
+    "drop_last": false,
+    "num_workers": 0,
+    "steps_per_epoch": 38,
+    "total_steps": 304,
+    "loss_fn": "CrossEntropyLoss(reduction='mean')",
+    "lr_scheduler": null,
+    "grad_clip": null,
+    "mixed_precision": false,
+    "label_smoothing": 0.0,
+    "class_weights": null,
+    "early_stopping": false
+  },
+  "train_loss_per_epoch": [
+    0.5557266167799632,
+    0.16095557272434236,
+    0.12265618083998561,
+    0.0914494139701128,
+    0.1196578441063563,
+    0.09949621419111887,
+    0.10019577838480473,
+    0.11712616184105476
+  ],
+  "val_macro_f1_per_epoch": [
+    0.9014259456153871,
+    0.8974411472037422,
+    0.895543647530407,
+    0.8910233785972158,
+    0.8834724560708334,
+    0.8794915366197377,
+    0.8811467649146424,
+    0.8831546856194973
+  ],
+  "final_train_loss": 0.11712616184105476,
+  "final_val_macro_f1": 0.8831546856194973,
+  "train_time_sec": 24.89
+}

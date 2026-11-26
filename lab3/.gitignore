@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+archive.zip
+data/
+seg_train/
+seg_test/
+seg_pred/
+
+local_checkpoints/
